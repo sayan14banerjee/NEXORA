@@ -1,11 +1,14 @@
 from datetime import datetime
 from uuid import uuid4
 
-from sqlalchemy import DateTime, ForeignKey, String, Text
+from sqlalchemy import DateTime, Enum, ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from app.core.enums import MessageRole
 
 from app.database.base import Base
 # from app.models.conversation import Conversation
+
+
 
 class Message(Base):
     __tablename__ = "messages"
@@ -20,8 +23,8 @@ class Message(Base):
         ForeignKey("conversations.id"), 
         nullable=False
         )
-    role: Mapped[str] = mapped_column(
-        String(50), 
+    role: Mapped[MessageRole] = mapped_column(
+        String(10),
         nullable=False
         )
     

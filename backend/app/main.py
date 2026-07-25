@@ -5,6 +5,9 @@ from pydantic import BaseModel
 from app.api.routes import chat
 from web_search import searchWeb
 
+from app.api.routes.conversation import router as conversation_router
+from app.api.routes.message import router as message_router
+
 from app.api.routes import search
 from app.api.routes import stream
 
@@ -39,9 +42,12 @@ app.include_router(
     tags=["Stream"]
 )
 
+
+app.include_router(conversation_router)
+app.include_router(message_router)
+
 class SearchRequest(BaseModel):
     query: str
-
 
 @app.get("/")
 async def root():
