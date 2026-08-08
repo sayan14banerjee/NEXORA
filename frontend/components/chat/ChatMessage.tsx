@@ -1,6 +1,6 @@
 import { Message } from "@/types/chat";
 import { Bot, User } from "lucide-react";
-import MarkdownRenderer from "./MarkdownRenderer";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { motion } from "framer-motion";
 
 interface Props {

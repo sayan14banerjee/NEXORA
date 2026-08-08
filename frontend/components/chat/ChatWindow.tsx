@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import ChatMessage from "./ChatMessage";
-import EmptyState from "./EmptyState";
+import EmptyState from "../EmptyState";
 
 import { Message } from "@/types/chat";
 
